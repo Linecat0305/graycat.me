@@ -1,0 +1,41 @@
+{
+    "skills": [
+      {
+        "id": 1,
+        "name": "Next.js(TSX)",
+        "level": 90,
+        "category": "Frontend"
+      },
+      {
+        "id": 2,
+        "name": "Flask+MongoDB",
+        "level": 80,
+        "category": "Language"
+      },
+      {
+        "id": 3,
+        "name": "TailwindCSS",
+        "level": 85,
+        "category": "Language"
+      },
+      {
+        "id": 4,
+        "name": "",
+        "level": 30,
+        "category": "Styling"
+      },
+      {
+        "id": 5,
+        "name": "Node.js",
+        "level": 40,
+        "category": "Backend"
+      },
+      {
+        "id": 6,
+        "name": "Git",
+        "level": 70,
+        "category": "Tools"
+      }
+    ]
+  }
+  
