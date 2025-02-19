@@ -3,6 +3,7 @@
 import { useTheme } from "./theme-provider"
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import projectsData from '@/data/projects.json'
 import skillsData from '@/data/skills.json'
 
@@ -32,9 +33,11 @@ export default function Portfolio() {
                     }}
                 >
                     <div className="text-center">
-                        <img
+                        <Image
                             src="/img/photo.jpg"
-                            alt="Profile"
+                            width={300}
+                            height={300}
+                            alt="GrayCat Photo"
                             className="w-32 h-32 rounded-full mx-auto mb-4"
                         />
                         <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
