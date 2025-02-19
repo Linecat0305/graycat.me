@@ -11,7 +11,7 @@
         "id": 2,
         "title": "Portfolio&Blog",
         "description": "就是我的這個Portfolio&Blog，目前還正在建置中，但我做了兩天",
-        "link": "http://localhost:3000",
+        "link": "https://graycat.me",
         "technologies": ["Next.js(TSX)", "TailWindCSS", "Py-Flask", "MongoDB"]
       }
     ]
