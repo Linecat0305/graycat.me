@@ -2,15 +2,8 @@
     "projects": [
       {
         "id": 1,
-        "title": "Music Demo",
-        "description": "作為我的第一個Demo，我花了一定的心思在思考這個Demo該怎麼做，然後產出了這個作品",
-        "link": "https://www.instagram.com/reel/DFnnUDYRv9D",
-        "technologies": ["Logic Pro", "Musescore", "MainStage"]
-      },
-      {
-        "id": 2,
         "title": "Portfolio&Blog",
-        "description": "就是我的這個Portfolio&Blog，目前還正在建置中，但我做了兩天",
+        "description": "就是我的這個Portfolio&Blog，目前還正在建置中",
         "link": "https://graycat.me",
         "technologies": ["Next.js(TSX)", "TailWindCSS", "Py-Flask", "MongoDB"]
       }
