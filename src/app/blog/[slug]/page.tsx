@@ -20,10 +20,12 @@ interface BlogPostPageProps {
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
   // Unwrap params using React.use()
-  const resolvedParams = use(params as any)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const resolvedParams = use(params as any) as { slug: string }
   const slug = resolvedParams.slug
   
   const [post, setPost] = useState<BlogPost | null>(null)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [mdxSource, setMdxSource] = useState<any>(null)
   const [isLoading, setIsLoading] = useState(true)
   
