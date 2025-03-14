@@ -1,14 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getPostBySlug } from '@/lib/blog'
 
-export async function GET(
-  request: NextRequest,
-  context: { params: { slug: string } }
-) {
-  const { params } = context
-  
-  // Safely access params
-  const slug = params?.slug
+export async function GET(request: NextRequest) {
+  // Get slug from URL
+  const slug = request.nextUrl.pathname.split('/').pop()
   if (!slug) {
     return NextResponse.json({ error: 'Slug is required' }, { status: 400 })
   }

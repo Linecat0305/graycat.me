@@ -6,27 +6,19 @@ import matter from 'gray-matter'
 const postsDirectory = path.join(process.cwd(), 'content/blog')
 
 // Simple authentication middleware for demo purposes
-// In a real application, use proper authentication
 function authenticate(req: NextRequest) {
-  // For demo purposes only - in a real app, implement proper authentication
-  const auth = req.headers.get('authorization')
-  // This is a simple placeholder for demo purposes
+  // For demo purposes only
   return true
 }
 
-export async function PUT(
-  req: NextRequest,
-  context: { params: { slug: string } }
-) {
+export async function PUT(req: NextRequest) {
   // Check authentication
   if (!authenticate(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
-  
-  const { params } = context
 
-  // Safely access params
-  const slug = params?.slug
+  // Get slug from URL
+  const slug = req.nextUrl.pathname.split('/').pop()
   if (!slug) {
     return NextResponse.json({ error: 'Slug is required' }, { status: 400 })
   }
@@ -79,19 +71,14 @@ export async function PUT(
   }
 }
 
-export async function DELETE(
-  req: NextRequest,
-  context: { params: { slug: string } }
-) {
+export async function DELETE(req: NextRequest) {
   // Check authentication
   if (!authenticate(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
-  
-  const { params } = context
 
-  // Safely access params
-  const slug = params?.slug
+  // Get slug from URL
+  const slug = req.nextUrl.pathname.split('/').pop()
   if (!slug) {
     return NextResponse.json({ error: 'Slug is required' }, { status: 400 })
   }

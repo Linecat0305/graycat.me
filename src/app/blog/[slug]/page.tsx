@@ -2,7 +2,7 @@
 
 import BlogNavButton from "@/components/BlogNavButton"
 import { motion } from "framer-motion"
-import { useEffect, useState, use } from "react"
+import { useEffect, useState } from "react"
 import { BlogPost } from "@/lib/blog"
 import { FaCalendarAlt, FaTag, FaArrowLeft } from "react-icons/fa"
 import Link from "next/link"
@@ -11,18 +11,11 @@ import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import remarkGfm from "remark-gfm"
 import { serialize } from "next-mdx-remote/serialize"
+import { useParams } from "next/navigation"
 
-interface BlogPostPageProps {
-  params: {
-    slug: string
-  }
-}
-
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  // Unwrap params using React.use()
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const resolvedParams = use(params as any) as { slug: string }
-  const slug = resolvedParams.slug
+export default function BlogPostPage() {
+  const params = useParams()
+  const slug = params.slug as string
   
   const [post, setPost] = useState<BlogPost | null>(null)
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -30,6 +23,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   const [isLoading, setIsLoading] = useState(true)
   
   useEffect(() => {
+    if (!slug) return
+    
     // Fetch specific post
     fetch(`/api/blog/posts/${slug}`)
       .then(res => res.json())
