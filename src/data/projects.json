@@ -2,10 +2,31 @@
     "projects": [
       {
         "id": 1,
-        "title": "Portfolio&Blog",
-        "description": "就是我的這個Portfolio&Blog，目前還正在建置中",
+        "title": "個人作品集與部落格",
+        "description": "使用 Next.js 和 TailwindCSS 開發的個人網站，整合了作品集展示和技術部落格功能。採用 Flask 和 MongoDB 構建的後端 API，支持博客內容管理和用戶互動。",
         "link": "https://graycat.me",
         "technologies": ["Next.js(TSX)", "TailWindCSS", "Py-Flask", "MongoDB"]
+      },
+      {
+        "id": 2,
+        "title": "機器人自動駕駛系統",
+        "description": "為 FIRST 機器人競賽開發的自動駕駛系統，使用電腦視覺和深度學習實現場地識別和路徑規劃。系統能夠在比賽中自主導航和執行任務，大幅提高了隊伍的競爭力。",
+        "link": "https://github.com/yourusername/robot-vision",
+        "technologies": ["Python", "OpenCV", "TensorFlow", "ROS"]
+      },
+      {
+        "id": 3,
+        "title": "音樂製作教學平台",
+        "description": "為音樂愛好者設計的在線學習平台，提供編曲、混音和錄音等課程。整合了視頻播放、互動評論和作業提交系統，幫助學生獲得實時反饋。",
+        "link": "https://music-learn.example.com",
+        "technologies": ["React", "Firebase", "Node.js", "Express"]
+      },
+      {
+        "id": 4,
+        "title": "智能家居控制中心",
+        "description": "結合 IoT 設備和人工智能的家居控制系統，支持語音控制、自動化場景和能源消耗監控。透過 React Native 開發的移動應用和基於 Flask 的 API 服務實現全方位控制。",
+        "link": "https://github.com/yourusername/smart-home",
+        "technologies": ["React Native", "Flask", "MQTT", "TensorFlow Lite"]
       }
     ]
   }

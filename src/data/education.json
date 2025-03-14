@@ -1,0 +1,34 @@
+{
+  "education": [
+    {
+      "id": 1,
+      "institution": "新北市非學校型態實驗教育",
+      "degree": "資訊科",
+      "period": "2025 ~ 現在",
+      "description": "專注於研究IoT、網頁設計及RWD頁面"
+    },
+    {
+      "id": 2,
+      "institution": "國立大安高工",
+      "degree": "休學中",
+      "period": "2022 ~ 現在",
+      "description": "資訊科，目前參與FRC8585機器人團隊並擔任青年導師。"
+    }
+  ],
+  "certificates": [
+    {
+      "id": 1,
+      "name": "TQC+ MIT App Inventor 2",
+      "issuer": "MIT",
+      "date": "2020",
+      "credentialLink": "https://www.tqcplus.org.tw/CertificateDetail.aspx?CODE=4M9XGrPrxMY%3D"
+    },
+    {
+      "id": 2,
+      "name": "電腦硬體裝修丙級",
+      "issuer": "中華民國技術士",
+      "date": "2024",
+      "credentialLink": "https://www.examiner.com.tw/examInfo_detail.php?id=299&tab=4"
+    }
+  ]
+}
