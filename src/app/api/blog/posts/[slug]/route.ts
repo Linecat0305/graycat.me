@@ -3,8 +3,10 @@ import { getPostBySlug } from '@/lib/blog'
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: { slug: string } }
 ) {
+  const { params } = context
+  
   // Safely access params
   const slug = params?.slug
   if (!slug) {

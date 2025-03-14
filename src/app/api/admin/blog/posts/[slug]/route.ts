@@ -16,12 +16,14 @@ function authenticate(req: NextRequest) {
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: { slug: string } }
 ) {
   // Check authentication
   if (!authenticate(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
+  
+  const { params } = context
 
   // Safely access params
   const slug = params?.slug
@@ -79,12 +81,14 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: { slug: string } }
 ) {
   // Check authentication
   if (!authenticate(req)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
+  
+  const { params } = context
 
   // Safely access params
   const slug = params?.slug
