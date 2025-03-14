@@ -2,11 +2,11 @@
   "experiences": [
     {
       "id": 1,
-      "role": "機器人程序開發",
+      "role": "青年導師",
       "company": "FRC8585",
       "period": "2022 - 現在",
-      "description": "作為FIRST機器人競賽團隊的青年導師，我負責指導學生使用Java語言與Wpilib開源庫來開發機器人的程式",
-      "achievements": ["帶領團隊贏得區域賽程序獎", "開發高精度視覺追蹤系統", "指導新隊員Java和ROS開發"]
+      "description": "作為FIRST機器人競賽團隊的青年導師，我負責指導學生使用Java語言與Wpilib開源庫來開發機器人的程式，同時我也與其他教練一同開發新版隊網與開發隊伍管理系統",
+      "achievements": ["撰寫Java教學文檔", "製作新版隊網", "開發隊伍管理系統"]
     }
   ]
 }

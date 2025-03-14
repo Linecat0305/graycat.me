@@ -44,6 +44,25 @@ export default function Portfolio() {
                     </motion.div>
                 )}
             </motion.button>
+            
+            {/* Blog Navigation Button */}
+            <motion.a
+                href="/blog"
+                className="fixed top-20 right-4 p-2 md:p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg z-50 text-white"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+            >
+                <motion.div
+                    initial={{ rotate: 0 }}
+                    animate={{ rotate: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    📝
+                </motion.div>
+            </motion.a>
 
             <div className="flex flex-col md:flex-row gap-12">
                 {/* Left Sidebar */}
@@ -85,15 +104,15 @@ export default function Portfolio() {
                     <div className="mt-6 text-left">
                         <div className="flex items-center gap-2 my-2">
                             <FaCode className="text-blue-500" />
-                            <span className="text-gray-700 dark:text-gray-300">全堆疊開發</span>
+                            <span className="text-gray-700 dark:text-gray-300">全端開發</span>
                         </div>
                         <div className="flex items-center gap-2 my-2">
                             <FaLaptopCode className="text-blue-500" />
-                            <span className="text-gray-700 dark:text-gray-300">機器人程式設計</span>
+                            <span className="text-gray-700 dark:text-gray-300">網頁設計/機器人程式設計</span>
                         </div>
                         <div className="flex items-center gap-2 my-2">
                             <FaGraduationCap className="text-blue-500" />
-                            <span className="text-gray-700 dark:text-gray-300">國立臺灣大學資工系</span>
+                            <span className="text-gray-700 dark:text-gray-300">大安高工休學/新北非學資訊</span>
                         </div>
                     </div>
                 </motion.div>
@@ -114,7 +133,7 @@ export default function Portfolio() {
                             transition={{ duration: 0.5 }}
                             className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4"
                         >
-                            你好！我是 GrayCat，一名充滿熱情的全堆疊開發者和機器人程式設計師。我擅長使用 Next.js、React 和 Flask 開發現代化網頁應用，同時也具備豐富的機器人程序開發經驗。
+                            你好！我是 灰毛GrayCat，一名充滿熱情的全端開發者與機器人程式設計師。我擅長使用 Next.js、React 和 Flask 開發現代化網頁應用程式，同時也具備豐富的程式開發經驗。
                         </motion.p>
                         <motion.p 
                             initial={{ opacity: 0 }}
@@ -122,7 +141,7 @@ export default function Portfolio() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-gray-600 dark:text-gray-300 leading-relaxed"
                         >
-                            我相信技術的目的是為了解決實際問題並創造價值。在大學期間，我積極參與各種開源項目和黑客松比賽，希望通過實踐來不斷提高自己的技術水平。我也熱愛音樂，是一名音樂編曲家和樂隊領導者。
+                            我相信學習新技術的目的是為了解決實際問題並創造價值。在休學期間，我積極參與各種開源項目和社群計畫，希望通過實踐來不斷提升自己的技術水平。
                         </motion.p>
                     </section>
 
@@ -343,14 +362,14 @@ export default function Portfolio() {
                         </p>
                         <div className="flex flex-wrap gap-4 mt-6">
                             <a 
-                                href="mailto:your.email@example.com" 
+                                href="mailto:me@graycat.me" 
                                 className="flex items-center gap-2 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg shadow-sm hover:shadow-md transition-shadow group"
                             >
                                 <FaEnvelope className="text-blue-500 group-hover:text-purple-500 transition-colors" />
-                                <span className="text-gray-700 dark:text-gray-300 text-sm md:text-base truncate max-w-[200px] md:max-w-none">your.email@example.com</span>
+                                <span className="text-gray-700 dark:text-gray-300 text-sm md:text-base truncate max-w-[200px] md:max-w-none">me@graycat.me</span>
                             </a>
                             <a 
-                                href="https://github.com/yourusername" 
+                                href="https://github.com/linecat0305" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="flex items-center gap-2 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg shadow-sm hover:shadow-md transition-shadow group"

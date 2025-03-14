@@ -34,9 +34,9 @@
 ```
 {
     "id": <現有最大id+1>,
-    "title": "個人作品集與部落格",
-    "description": "使用 Next.js 和 TailwindCSS 開發的個人網站，整合了作品集展示和技術部落格功能。採用 Flask 和 MongoDB 構建的後端 API，支持博客內容管理和用戶互動。",
-    "link": "https://graycat.me",
-    "technologies": ["Next.js(TSX)", "TailWindCSS", "Py-Flask", "MongoDB"]
+    "title": "<標題>",
+    "description": "<專案介紹>",
+    "link": "<專案連結>",
+    "technologies": ["<使用技術1>", "<使用技術2>", "<使用技術3>", "<使用技術4>"]
 }
 ```
