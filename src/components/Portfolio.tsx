@@ -10,59 +10,15 @@ import projectsData from '@/data/projects.json'
 import skillsData from '@/data/skills.json'
 import educationData from '@/data/education.json'
 import experiencesData from '@/data/experiences.json'
+import BlogNavButton from "@/components/BlogNavButton"
 
 export default function Portfolio() {
     const { theme, setTheme } = useTheme()
 
     return (
         <div className="container mx-auto px-4 md:px-12 lg:px-24 py-6 md:py-10">
-            {/* Theme Toggle Button */}
-            <motion.button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="fixed top-4 right-4 p-2 md:p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg z-50 text-white"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-            >
-                {theme === "dark" ? (
-                    <motion.div 
-                        initial={{ rotate: -45 }}
-                        animate={{ rotate: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        🌞
-                    </motion.div>
-                ) : (
-                    <motion.div 
-                        initial={{ rotate: 45 }}
-                        animate={{ rotate: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        🌙
-                    </motion.div>
-                )}
-            </motion.button>
-            
-            {/* Blog Navigation Button */}
-            <motion.a
-                href="/blog"
-                className="fixed top-20 right-4 p-2 md:p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 shadow-lg z-50 text-white"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-            >
-                <motion.div
-                    initial={{ rotate: 0 }}
-                    animate={{ rotate: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    📝
-                </motion.div>
-            </motion.a>
+            {/* Navigation component is now shared via BlogNavButton */}
+            <BlogNavButton />
 
             <div className="flex flex-col md:flex-row gap-12">
                 {/* Left Sidebar */}

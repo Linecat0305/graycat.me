@@ -25,12 +25,14 @@ export function BlogCard({ post, index }: BlogCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-500"
+      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-l-4 border-blue-500 group"
     >
-      <Link href={`/blog/${post.slug}`} className="block group">
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-500 transition-colors">
-          {post.title}
-        </h2>
+      <div>
+        <Link href={`/blog/${post.slug}`} prefetch={true} className="block">
+          <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 hover:text-blue-500 transition-colors">
+            {post.title}
+          </h2>
+        </Link>
         
         <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
           <div className="flex items-center gap-1">
@@ -50,10 +52,11 @@ export function BlogCard({ post, index }: BlogCardProps) {
           {post.description}
         </p>
         
-        <div className="text-blue-500 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">
-          閱讀更多 <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-        </div>
-      </Link>
+        <Link href={`/blog/${post.slug}`} prefetch={true} className="inline-flex items-center text-blue-500 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+          閱讀更多 
+          <span className="inline-block ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </Link>
+      </div>
     </motion.div>
   )
 }
