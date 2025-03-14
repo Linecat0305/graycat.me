@@ -5,8 +5,6 @@ description: "這篇文章介紹如何使用Next.js和TailwindCSS快速建立高
 tags: ["Web開發", "Next.js", "TailwindCSS", "React", "前端"]
 ---
 
-# 使用Next.js和TailwindCSS打造現代化網站
-
 在現代Web開發中，選擇合適的技術棧對於提高開發效率和用戶體驗至關重要。Next.js和TailwindCSS的組合已經成為許多前端開發者的首選方案。本文將探討為什麼這個組合如此流行，以及如何利用它們打造高效能、美觀的現代化網站。
 
 ## Next.js: React應用的完美框架

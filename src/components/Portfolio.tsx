@@ -3,7 +3,7 @@
 "use client"
 
 import { useTheme } from "./theme-provider"
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaBriefcase, FaGraduationCap, FaCertificate, FaCode, FaLaptopCode } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap, FaCertificate, FaCode, FaLaptopCode } from "react-icons/fa"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import projectsData from '@/data/projects.json'
@@ -89,7 +89,7 @@ export default function Portfolio() {
                             transition={{ duration: 0.5 }}
                             className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4"
                         >
-                            你好！我是 灰毛GrayCat，一名充滿熱情的全端開發者與機器人程式設計師。我擅長使用 Next.js、React 和 Flask 開發現代化網頁應用程式，同時也具備豐富的程式開發經驗。
+                            你好！我是灰毛GrayCat，一名充滿熱情的全端開發者與機器人程式設計師。我擅長使用 Next.js、React 和 Express.js 開發現代化網頁應用程式，同時也具備豐富的程式開發經驗。
                         </motion.p>
                         <motion.p 
                             initial={{ opacity: 0 }}
@@ -97,7 +97,7 @@ export default function Portfolio() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-gray-600 dark:text-gray-300 leading-relaxed"
                         >
-                            我相信學習新技術的目的是為了解決實際問題並創造價值。在休學期間，我積極參與各種開源項目和社群計畫，希望通過實踐來不斷提升自己的技術水平。
+                            我相信學習新技術的目的是為了解決實際問題並創造價值。在休學期間，我積極參與各種開源項目和社群計畫，希望通過實踐來不斷提升自己的技術水準。
                         </motion.p>
                     </section>
 
@@ -264,7 +264,7 @@ export default function Portfolio() {
                         <div className="flex items-center mb-6">
                             <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-600 mr-3"></div>
                             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
-                                項目
+                                專案
                             </h2>
                         </div>
                         <div className="space-y-6">
@@ -288,7 +288,7 @@ export default function Portfolio() {
                                         rel="noopener noreferrer" 
                                         className="link-hover text-blue-500 inline-block mb-3 group"
                                     >
-                                        查看項目 <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+                                        查看此專案 <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                                     </a>
                                     <div className="flex flex-wrap gap-2 mt-2">
                                         {project.technologies.map((tech, index) => (
@@ -310,11 +310,11 @@ export default function Portfolio() {
                         <div className="flex items-center mb-6">
                             <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-600 mr-3"></div>
                             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
-                                聯繫我
+                                聯絡我
                             </h2>
                         </div>
                         <p className="text-gray-600 dark:text-gray-300 mb-4">
-                            如果你對我的工作感興趣，或者希望討論合作機會，歡迎通過以下方式聯繫我：
+                            如果你對我的經歷感興趣，或希望和我有進一步的合作關係，歡迎透過以下方式聯絡我：
                         </p>
                         <div className="flex flex-wrap gap-4 mt-6">
                             <a 

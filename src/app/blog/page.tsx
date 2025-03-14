@@ -112,7 +112,7 @@ export default function BlogPage() {
         <div className="w-full mx-auto">
           <header className="mb-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gradient animate-gradient bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500">
-              GrayCat 部落格
+              GrayCat Blog
             </h1>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-6">
               分享技術、心得和學習筆記

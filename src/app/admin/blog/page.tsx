@@ -24,6 +24,14 @@ export default function BlogAdmin() {
   const [error, setError] = useState('')
 
   useEffect(() => {
+    // Check for authentication in localStorage on component mount
+    const authStatus = localStorage.getItem('adminAuthenticated')
+    if (authStatus === 'true') {
+      setIsAuthenticated(true)
+    }
+  }, [])
+  
+  useEffect(() => {
     // Only load posts if authenticated
     if (isAuthenticated) {
       loadPosts()
@@ -53,6 +61,7 @@ export default function BlogAdmin() {
     // In a real app, use proper authentication
     if (password === 'admin123') { // This should be environment variable or proper auth
       setIsAuthenticated(true)
+      localStorage.setItem('adminAuthenticated', 'true')
       setError('')
     } else {
       setError('Invalid password')
@@ -184,7 +193,7 @@ export default function BlogAdmin() {
     }
   }
 
-  // If not authenticated, show login form
+  // If not authenticated, redirect to the main admin page
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
@@ -193,36 +202,17 @@ export default function BlogAdmin() {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-md w-full p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
         >
-          <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Blog Admin Login</h1>
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Redirecting...</h1>
           
-          {error && (
-            <div className="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-100 p-3 rounded-lg mb-4">
-              {error}
-            </div>
-          )}
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
+            Please authenticate from the main admin dashboard.
+          </p>
           
-          <form onSubmit={handleAuthenticate}>
-            <div className="mb-4">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
-                required
-              />
-            </div>
-            
-            <button
-              type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors"
-            >
-              Login
-            </button>
-          </form>
+          <div className="mt-4 text-center">
+            <Link href="/admin" className="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors inline-block">
+              Go to Admin Dashboard
+            </Link>
+          </div>
           
           <div className="mt-4 text-center">
             <Link href="/" className="text-blue-500 hover:text-blue-700 dark:hover:text-blue-300">
@@ -239,18 +229,46 @@ export default function BlogAdmin() {
       <div className="max-w-5xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 dark:text-white">Blog Administration</h1>
-          <div className="flex gap-4">
+          <div className="flex gap-2 flex-wrap justify-end">
             <Link
               href="/blog"
-              className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-4 py-2 rounded-lg transition-colors"
+              className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-1"
             >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+              </svg>
               View Blog
             </Link>
             <Link
-              href="/"
-              className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-4 py-2 rounded-lg transition-colors"
+              href="/admin"
+              className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-1"
             >
-              Back to Portfolio
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+              </svg>
+              Back to Admin
+            </Link>
+            <button
+              onClick={() => {
+                localStorage.removeItem('adminAuthenticated')
+                setIsAuthenticated(false)
+              }}
+              className="bg-red-100 dark:bg-red-900/30 hover:bg-red-200 dark:hover:bg-red-800/40 text-red-700 dark:text-red-300 px-4 py-2 rounded-lg transition-colors flex items-center gap-1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clipRule="evenodd" />
+              </svg>
+              Logout
+            </button>
+            <Link
+              href="/"
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+              </svg>
+              Portfolio
             </Link>
           </div>
         </div>
