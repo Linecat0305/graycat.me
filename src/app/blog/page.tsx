@@ -6,13 +6,17 @@ import { useEffect, useState } from "react"
 import { BlogPost, getAllPosts } from "@/lib/blog"
 import { BlogCard } from "@/components/ui/blog-card"
 import { FaSearch, FaTag, FaTimes } from "react-icons/fa"
+import { useSearchParams } from "next/navigation"
 
 export default function BlogPage() {
+  const searchParams = useSearchParams()
+  const tagParam = searchParams.get('tag')
+  
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [searchQuery, setSearchQuery] = useState("")
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([])
   const [allTags, setAllTags] = useState<string[]>([])
-  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [selectedTags, setSelectedTags] = useState<string[]>(tagParam ? [tagParam] : [])
   const [themes, setThemes] = useState<string[]>([
     "全部", "Web開發", "機器人", "專案分享", "學習筆記", "技術趨勢"
   ])

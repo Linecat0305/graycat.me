@@ -11,6 +11,9 @@ import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import remarkGfm from "remark-gfm"
 import { serialize } from "next-mdx-remote/serialize"
+import LikeButton from "@/components/LikeButton"
+import TopicFollowButton from "@/components/TopicFollowButton"
+import CommentSection from "@/components/CommentSection"
 
 interface BlogPostContentProps {
   slug: string
@@ -160,6 +163,43 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
           <article className="prose prose-blue max-w-none dark:prose-invert prose-a:text-blue-500 prose-headings:text-gray-800 dark:prose-headings:text-white prose-img:rounded-lg prose-img:shadow-md">
             {mdxSource && <MDXRemote {...mdxSource} />}
           </article>
+
+          <div className="flex justify-between items-center mt-12 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center space-x-4">
+              {/* 文章互動 */}
+              <div className="flex items-center">
+                {/* 引入點讚按鈕 */}
+                {post.slug && <LikeButton postSlug={post.slug} />}
+              </div>
+              
+              {/* 文章標籤部分 */}
+              {post.tags && post.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map(tag => (
+                    <div key={tag} className="flex items-center">
+                      <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-xs rounded-full text-blue-800 dark:text-blue-100 mr-1">
+                        {tag}
+                      </span>
+                      {/* 引入追蹤主題按鈕 */}
+                      <TopicFollowButton topic={tag} />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            
+            <div>
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-sm text-blue-500 hover:text-blue-700 dark:hover:text-blue-300"
+              >
+                回到頂部 ↑
+              </button>
+            </div>
+          </div>
+
+          {/* 評論區塊 */}
+          {post.slug && <CommentSection postSlug={post.slug} />}
         </div>
         
         <footer className="mt-20 py-8 border-t border-gray-200 dark:border-gray-700 w-full max-w-3xl mx-auto">

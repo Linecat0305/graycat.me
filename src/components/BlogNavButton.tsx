@@ -5,6 +5,7 @@ import { useTheme } from "./theme-provider"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { FaMoon, FaSun, FaUser, FaBlog } from "react-icons/fa"
+import AuthNavigation from "./AuthNavigation"
 
 export default function BlogNavButton() {
   const { theme, setTheme } = useTheme()
@@ -45,6 +46,16 @@ export default function BlogNavButton() {
         </Link>
       </motion.div>
 
+      {/* Authentication Component */}
+      <motion.div
+        className="bg-white dark:bg-gray-800 rounded-full shadow-lg p-1"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
+      >
+        <AuthNavigation />
+      </motion.div>
+
       {/* Theme Toggle Button */}
       <motion.button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -53,7 +64,7 @@ export default function BlogNavButton() {
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
       >
         {theme === "dark" ? (
           <motion.div 

@@ -1,41 +1,40 @@
 {
-    "skills": [
-      {
-        "id": 1,
-        "name": "Next.js(TSX)",
-        "level": 90,
-        "category": "Frontend"
-      },
-      {
-        "id": 2,
-        "name": "Flask+MongoDB",
-        "level": 80,
-        "category": "Language"
-      },
-      {
-        "id": 3,
-        "name": "TailwindCSS",
-        "level": 85,
-        "category": "Language"
-      },
-      {
-        "id": 4,
-        "name": "UI/UX Design",
-        "level": 75,
-        "category": "Design"
-      },
-      {
-        "id": 5,
-        "name": "Node.js",
-        "level": 40,
-        "category": "Backend"
-      },
-      {
-        "id": 6,
-        "name": "Git",
-        "level": 70,
-        "category": "Tools"
-      }
-    ]
-  }
-  
+  "skills": [
+    {
+      "id": 1,
+      "name": "Next.js(TSX)",
+      "level": 60,
+      "category": "Frontend"
+    },
+    {
+      "id": 2,
+      "name": "Next.js API Routes",
+      "level": 20,
+      "category": "Backend"
+    },
+    {
+      "id": 3,
+      "name": "TailwindCSS",
+      "level": 50,
+      "category": "Theming Language"
+    },
+    {
+      "id": 4,
+      "name": "SQLite",
+      "level": 10,
+      "category": "Design"
+    },
+    {
+      "id": 5,
+      "name": "Prisma ORM",
+      "level": 40,
+      "category": "Scheme of SQLs"
+    },
+    {
+      "id": 6,
+      "name": "Git",
+      "level": 45,
+      "category": "Tools"
+    }
+  ]
+}
