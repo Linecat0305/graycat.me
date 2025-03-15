@@ -7,8 +7,9 @@ import { BlogPost, getAllPosts } from "@/lib/blog"
 import { BlogCard } from "@/components/ui/blog-card"
 import { FaSearch, FaTag, FaTimes } from "react-icons/fa"
 import { useSearchParams } from "next/navigation"
+import { Suspense } from "react"
 
-export default function BlogPage() {
+function BlogPageContent() {
   const searchParams = useSearchParams()
   const tagParam = searchParams.get('tag')
   
@@ -239,5 +240,13 @@ export default function BlogPage() {
         </footer>
       </motion.div>
     </motion.main>
+  )
+}
+
+export default function BlogPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BlogPageContent />
+    </Suspense>
   )
 }

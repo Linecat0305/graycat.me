@@ -5,8 +5,9 @@ import { FaGoogle, FaGithub, FaUserPlus } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { Suspense } from "react";
 
-export default function RegisterPage() {
+function RegisterContent() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
@@ -202,5 +203,13 @@ export default function RegisterPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <RegisterContent />
+    </Suspense>
   );
 }
