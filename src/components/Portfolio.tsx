@@ -49,7 +49,7 @@ export default function Portfolio() {
                         <a href="https://github.com/linecat0305" target="_blank" rel="noopener noreferrer" className="group">
                             <FaGithub className="text-xl text-gray-600 dark:text-gray-300 group-hover:text-blue-500 transform transition-transform group-hover:scale-125" />
                         </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="group">
+                        <a href="https://linkedin.com/in/fuckme" target="_blank" rel="noopener noreferrer" className="group">
                             <FaLinkedin className="text-xl text-gray-600 dark:text-gray-300 group-hover:text-blue-500 transform transition-transform group-hover:scale-125" />
                         </a>
                         <a href="mailto:me@graycat.me" className="group">
@@ -334,7 +334,7 @@ export default function Portfolio() {
                                 <span className="text-gray-700 dark:text-gray-300">GitHub</span>
                             </a>
                             <a 
-                                href="https://linkedin.com/in/yourusername" 
+                                href="https://linkedin.com/in/fuckme"
                                 target="_blank" 
                                 rel="noopener noreferrer" 
                                 className="flex items-center gap-2 bg-white dark:bg-gray-700 px-4 py-3 rounded-lg shadow-sm hover:shadow-md transition-shadow group"

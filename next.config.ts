@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: process.env.NODE_ENV === 'production',
   },
   // 這是 Vercel 上自動啟用的
-  // output: 'standalone',
+  output: 'standalone',
 };
 
 export default nextConfig;

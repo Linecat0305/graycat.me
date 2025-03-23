@@ -20,7 +20,7 @@ export default function AuthNavigation() {
         <>
           <button
             onClick={toggleDropdown}
-            className="flex items-center space-x-2 rounded-full bg-blue-100 dark:bg-blue-900/30 p-1 text-blue-800 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800/50 transition-colors"
+            className="flex items-center space-x-2 p-2 md:p-3 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
           >
             {session.user.image ? (
               <img
@@ -29,11 +29,11 @@ export default function AuthNavigation() {
                 className="h-8 w-8 rounded-full"
               />
             ) : (
-              <div className="h-8 w-8 rounded-full bg-blue-500 dark:bg-blue-600 text-white flex items-center justify-center">
+              <div className="h-8 w-8 rounded-full bg-blue-500 text-white flex items-center justify-center">
                 <FaUser />
               </div>
             )}
-            <span className="text-sm font-medium pr-2">{session.user.name}</span>
+            <span className="text-sm font-medium">{session.user.name}</span>
           </button>
 
           {isOpen && (
@@ -63,20 +63,20 @@ export default function AuthNavigation() {
           )}
         </>
       ) : (
-        <div className="flex items-center space-x-2">
+        <div className="flex">
           <Link
             href="/login"
-            className="flex items-center text-sm bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded transition-colors"
+            className="p-2 md:p-3 rounded-full flex items-center justify-center transition-colors bg-gradient-to-r from-blue-500 to-purple-600 text-white"
           >
-            <FaSignInAlt className="mr-1" />
-            登入
+            <FaSignInAlt className="text-lg" />
+            <span className="ml-2">登入</span>
           </Link>
           <Link
             href="/register"
-            className="flex items-center text-sm bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded transition-colors"
+            className="p-2 md:p-3 rounded-full flex items-center justify-center transition-colors bg-gradient-to-r from-blue-500 to-purple-600 text-white"
           >
-            <FaUserPlus className="mr-1" />
-            註冊
+            <FaUserPlus className="text-lg" />
+            <span className="ml-2">註冊</span>
           </Link>
         </div>
       )}
