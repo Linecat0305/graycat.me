@@ -132,7 +132,6 @@ export default function BlogPostContent({ slug }: BlogPostContentProps) {
             <FaArrowLeft />
             <span>返回部落格首頁</span>
           </Link>
-          
           <header className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-white">
               {post.title}

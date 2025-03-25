@@ -48,7 +48,7 @@ export default function BlogNavButton() {
 
       {/* Authentication Component */}
       <motion.div
-        className="bg-white dark:bg-gray-800 rounded-full shadow-lg p-1"
+        className="bg-white dark:bg-gray-800 rounded-full shadow-lg p-1 flex"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3, delay: 0.1 }}
