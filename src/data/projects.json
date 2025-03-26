@@ -13,6 +13,17 @@
         "Prisma",
         "SQLite"
       ]
+    },
+    {
+      "id": 2,
+      "title": "帳務管理工具 - 集成專業與簡約的記帳本",
+      "description": "使用SwiftUI與CloudKit做成的記帳軟體",
+      "link": "https://apps.apple.com/us/app/帳務管理工具-集成專業與簡約的記帳本/id6743738033",
+      "technologies": [
+        "SwiftUI",
+        "CloudKit",
+        "Apple ID Login"
+      ]
     }
   ]
 }
