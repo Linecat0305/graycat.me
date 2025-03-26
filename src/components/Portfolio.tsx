@@ -3,7 +3,7 @@
 "use client"
 
 import { useTheme } from "./theme-provider"
-import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap, FaCertificate, FaCode, FaLaptopCode } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap, FaCertificate, FaCode, FaLaptopCode, FaMale } from "react-icons/fa"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import projectsData from '@/data/projects.json'
@@ -59,16 +59,20 @@ export default function Portfolio() {
                     
                     <div className="mt-6 text-left">
                         <div className="flex items-center gap-2 my-2">
+                            <FaMale className="text-blue-500" />
+                            <span className="text-gray-700 dark:text-gray-300">18歲 / 高三</span>
+                        </div>
+                        <div className="flex items-center gap-2 my-2">
                             <FaCode className="text-blue-500" />
                             <span className="text-gray-700 dark:text-gray-300">全端開發</span>
                         </div>
                         <div className="flex items-center gap-2 my-2">
                             <FaLaptopCode className="text-blue-500" />
-                            <span className="text-gray-700 dark:text-gray-300">網頁設計/機器人程式設計</span>
+                            <span className="text-gray-700 dark:text-gray-300">網頁設計 / 機器人程式設計</span>
                         </div>
                         <div className="flex items-center gap-2 my-2">
                             <FaGraduationCap className="text-blue-500" />
-                            <span className="text-gray-700 dark:text-gray-300">大安高工休學/新北非學資訊</span>
+                            <span className="text-gray-700 dark:text-gray-300">大安高工休學 / 新北非學資訊</span>
                         </div>
                     </div>
                 </motion.div>
