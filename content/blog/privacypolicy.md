@@ -1,6 +1,6 @@
 ---
 title: "GrayCat Studio出品應用程式的隱私權政策"
-date: "2025-03-29"
+date: "2025-03-25"
 description: "本文提供GrayCat Studio所有應用程式的隱私權政策，包括記帳工具和Todo List任務管理應用程式"
 tags: ["記帳本", "記帳", "BookKeeper", "Todo List", "任務管理"]
 ---
