@@ -24,6 +24,16 @@
         "CloudKit",
         "Apple ID Login"
       ]
+    },
+    {
+      "id": 3,
+      "title": "Todo-List",
+      "description": "使用SwiftUI與Github API串接做出的專案任務管理軟體，包含強大的行事曆與檔案查看系統，讓你在review code的時候不會有像原生github行動裝置端一樣很難用的感覺",
+      "link": "https://apps.apple.com/us/app/todo-list/id6743925234",
+      "technologies": [
+        "SwiftUI",
+        "Github API"
+      ]
     }
   ]
 }
